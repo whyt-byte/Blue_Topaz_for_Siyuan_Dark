@@ -1,0 +1,833 @@
+/* Blue Topaz dark for 思源，[20201216]。作者：flying fly flies*/
+/*
+===========================
+=====笔记框 Note blocks=====
+===========================
+
+----------------------------------------------------------------------
+---------------不同颜色背景 Colourful note backgrounds-----------------
+----------------------------------------------------------------------
+语法：```note-xxx-bg 或```note-xxx-background
+---------------------------------------------
+
+```note-orange-bg
+正文text
+```
+
+```note-yellow-bg
+正文text
+```
+
+```note-green-bg
+正文text
+```
+
+```note-blue-bg
+正文text
+```
+
+```note-purple-bg
+正文text
+```
+
+```note-pink-bg
+正文text
+```
+
+```note-red-bg
+正文text
+```
+
+```note-gray-bg
+正文text
+```
+
+```note-brown-bg
+正文text
+```
+-----------------------------------------------------
+----------不同笔记颜色 Colourful note texts------------
+-----------------------------------------------------
+
+```note-orange
+正文text
+```
+
+```note-yellow
+正文text
+```
+
+```note-green
+正文text
+```
+
+```note-blue
+正文text
+```
+
+```note-purple
+正文text
+```
+
+```note-pink
+正文text
+```
+
+```note-red
+正文text
+```
+
+```note-gray
+正文text
+```
+
+```note-brown
+正文text
+```
+
+
+--------------------------------------------------------
+------------重要笔记框 important note blocks-------------
+--------------------------------------------------------
+有笔记外框 Different block style
+--------------------------------------------------------
+
+```note-imp
+正文text
+```
+*/
+
+:root {
+    /* 主色 */
+    --b3-theme-primary: #3187d3;
+    --b3-theme-primary-light: rgba(66, 133, 244, 0.54);
+    --b3-theme-primary-lighter: rgba(66, 133, 244, 0.38);
+    --b3-theme-primary-lightest: rgba(66, 133, 244, 0.12);
+    --b3-theme-secondary: #f3a92f;
+    --b3-theme-background: #202020;
+    --b3-theme-surface: #141414;
+    --b3-theme-error: #d23f31;
+
+    /* 文字颜色 */
+    --b3-theme-on-primary: #fff;
+    --b3-theme-on-secondary: #fff;
+    --b3-theme-on-background: #b9b9b9;
+    --b3-theme-on-surface: #a3a3a3;
+    --b3-theme-on-error: #fff;
+    --file-active-text-color: #e0e0e0; 
+
+    /* 字体 */
+    --b3-font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols";
+    --b3-font-family-code: mononoki, Consolas, "Liberation Mono", Menlo, Courier, monospace, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols";
+
+    --font-family-tag:;
+
+    /* 线条 */
+    --b3-border-color: #141414;
+
+    /* 滚动条 */
+    --b3-scroll-color: rgba(230, 230, 230, .3);
+
+    /* 列表 */
+    --b3-list-hover: rgba(255, 255, 255, .06);
+
+    /* 页签 */
+    --b3-tab-background: #141414;
+
+    /* 提示 */
+    --b3-tooltips-color: rgba(70, 72, 76, .86);
+
+    /* 动画效果 */
+    --b3-transition: all .15s cubic-bezier(0, 0, .2, 1) 0ms;
+
+    /* 阴影 */
+    --b3-point-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+    --b3-dialog-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.4);
+
+    /* diff */
+    --b3-diff-add: #133a1c;
+    --b3-diff-add-surface: #28853e;
+    --b3-diff-del: #440c10;
+    --b3-diff-del-surface: #b1202d;
+
+    /* 图表颜色 */
+    --b3-graph-point: #e8eaed;
+    --b3-graph-line: #9aa0a6;
+    --b3-graph-hl-point: #f3a92f;
+    --b3-graph-hl-line: #d23f31;
+
+    /* 编辑器工具栏高度 */
+    --b3-vditor-toolbar-height: 29px;
+    --b3-vditor-toolbar-height-space: 6px;
+
+    /* 编辑器搜索颜色 */
+    --b3-vditor-search-background: #32593c;
+    --b3-vditor-search-border-color: #486a51;
+    --b3-vditor-search-current-background: #204282;
+
+    /* 代码片段背景 */
+    --b3-vditor-code-background: #416eadc0;
+
+    /* 即时渲染标记符颜色 */
+    --b3-vditor-mark-heading-color: #007acc;
+    --b3-vditor-mark-title-color: #808080;
+    --b3-vditor-mark-em-color: #cc7832;
+    --b3-vditor-mark-strong-color: #cc7832;
+    --b3-vditor-mark-backslash-color: #cc7832;
+    --b3-vditor-mark-s-color: #9aa0a6;
+    --b3-vditor-mark-mark-color: #9aa0a6;
+    --b3-vditor-mark-link-color: #ffc66d;
+    --b3-vditor-mark-bracket-color: #287bde;
+    --b3-vditor-mark-paren-color: #6a8759;
+    --b3-vditor-mark-block-color: #9876aa;
+    --b3-vditor-mark-tag-color: #cc7832;
+
+    /* 即时渲染行内元素颜色 */
+    --b3-vditor-inline-strong-color: #cf1a1a;;
+    --b3-vditor-inline-em-color: #e8eaed;
+    --b3-vditor-inline-s-color: #e8eaed;
+    --b3-vditor-inline-link-color: #4285f4;
+    --b3-vditor-inline-mark-background: #32593c;
+    --b3-vditor-inline-mark-color: #e8eaed;
+    --b3-vditor-inline-tag-color: #9aa0a6;
+    --b3-vditor-inline-blockref-color: #53aaf5;
+
+    /*=========================*/
+    /*From blue topaz (obsidian)*/
+    --background-primary: #242424; 
+    --background-primary-alt: #444444;
+    --background-secondary: #333333;
+    --background-secondary-alt: #000000; 
+    --background-accent: #000;
+    --background-modifier-border: #565656;
+    --background-modifier-form-field: rgba(0, 0, 0, 0.3);
+    --background-modifier-form-field-highlighted: rgba(0, 0, 0, 0.22);
+    --background-modifier-box-shadow: rgba(0, 0, 0, 0.3);
+    --background-modifier-success: #539126;
+    --background-modifier-error: #9b4343;
+    --background-modifier-error-rgb: 155,67,67;
+    --background-modifier-error-hover: #470000;
+    --background-modifier-cover: rgba(0, 0, 0, 0.6);
+    --text-accent: #53aaf5;
+    --text-accent-hover: #3e8de7; 
+    --text-normal: #d8d8d8; 
+    --text-muted: #8b8b8b;  
+    --text-faint: rgb(121, 121, 121);
+    --accent-strong: #ffffff;
+    /*--text-em-color: #ff9b9b;*/
+    --text-error: #e16d76;
+    --text-error-hover: #c9626a;
+    --text-highlight-bg: #bb7900d2;
+    --text-selection: #e6c2755e;
+    --text-on-accent: #dcddde;
+    --interactive-normal: #20242b;
+    --interactive-hover: #353b47;
+    --interactive-accent: #3187d3; 
+    --interactive-accent-rgb: 45, 135, 211;     
+    --interactive-accent-hover: #3e8de7;
+    --panel-border-color: #18191e;
+    --search-text: #e0e0e0;
+    --folder-title: #ffffff;
+    --mark-highlight: #bb7900d2;
+  
+    --gray-1: #5C6370;
+    --gray-2: #abb2bf;
+    --red: #e06c75;
+    --orange: #d19a66;
+    --green: #98c379;
+    --aqua: #56b6c2;
+    --purple: #c678dd;
+    --blue: #61afef;
+    --yellow: #e5c07b;
+    --yykys: #5c67996c;   
+    --btys: #7292B1;
+    --bqys: #ffffff;
+    --bqds: #404b5ef5;  
+    --zzsyck: #3187d3; 
+    --btblj: #96b7e4; 
+    --dgxs: #515953; 
+    --ztys:  #3187d3;
+    --ztysop: #3187d388;
+    --color-specification: #3ce252;
+    --list-ul-block-color: #86561f;
+    --list-ul-disc-color: #db6019;
+    --list-ul-hover: #996725;
+    --list-ol-block-color: #0d5c8a;
+    --list-ol-number-color: #95afc4;
+    --list-ol-hover: #2c66a8;
+  
+    /*tags*/
+    --tag1: #cf0000;
+    --tag2: #cf7c00;
+    --tag3: #00a71c;
+    --bqys1: #f37575bb;
+    --bqys2: #d39461bb;
+    --bqys3: #c7cc37bb;
+    --bqys4: #8fd389bb;
+    --bqys5: #5ccbcfbb;
+    --bqys6: #5b94d6bb;
+    --bqys7: #9859e0bb;
+    --bqys8: #cd64d6bb;
+    --bqys9: #b3b3b3bb;
+  
+    /*titles*/
+    --h1-color: #709fc5;
+    --h2-color: #69b96d;
+    --h3-color: #c5c751;
+    --h4-color: #c99a53;
+    --h5-color: #cc5353;
+    --h6-color: #c262df;
+  
+
+    --file-list-background: #096ab9;
+    --file-list-background-files: #005eaaad;
+    --workplace-markdown: #ee9b00;
+    --layout-tabbar: #afafaf;
+    --blockquote-color: #111111;
+    --link-color: #8cbae0;
+
+    /* 图表颜色 */
+    --b3-graph-line: #6b6b6b;
+    --b3-graph-hl-point: #da9e1e;
+    --b3-graph-hl-line: #b95300;
+    --b3-graph-point: #2e7cc0;
+  
+    /*mermaid*/
+    --mermaid-active-task-color: #187ef1;
+    --mermaid-seq-dia-color: #1371be;
+  
+    /*table*/
+    --table-background-color: #4d4d4d;
+    --table-background-color-odd: #333333;
+    --table-border-color: #c0c0c0;
+    --table-thead-background-color: #4e6a85;
+    --table-hover-raw-color: #3187d33d;
+    --table-hover-color: #3187d388;
+    --table-hover-thead-color: #6fa084;
+  
+  /*colourful notes*/
+    --text-gray: #acacac;
+    --text-brown: #be9684;
+    --text-orange: #ffa344;
+    --text-yellow: #ffdc51;
+    --text-green: #52c7b2;
+    --text-blue: #8ca1ff;
+    --text-purple: #b386f1;
+    --text-pink: #ff6bba;
+    --text-red: #ff4f4f;
+  
+    --background-gray: #535353;
+    --background-brown: #493a3a;
+    --background-orange: #53422f;
+    --background-yellow: #585536;
+    --background-green: #32503e;
+    --background-blue: #2f5264;
+    --background-purple: #443f57;
+    --background-pink: #533b4a;
+    --background-red: #683c3c;
+  
+    --note-important: #fd4141;
+    --note-cloze: #ffffff;
+
+}
+
+.language-graphviz polygon {
+    fill: var(--b3-theme-on-surface);
+}
+
+
+/*=========================*/
+/*==========tags===========*/
+/*=========================*/
+/* ====== Tag Pills ======== */
+span.vditor-ir__tag:not(.token) {
+  border: none;
+  color: #f3f3f3;
+  padding: 1px 8px;
+  text-align: center;
+  text-decoration: none;
+  margin: 0px;
+  cursor: pointer;
+  border-radius: 15px;
+  background-color: var(--ztys);
+  font-family: var(--font-family-tag);
+}
+span.vditor-ir__tag:not(.token):hover {
+  color: white;
+  background-color: var(--ztysop);
+}
+
+
+/*目录栏*/
+.b3-list--background .b3-list-item--focus {
+ background-color: var(--file-list-background) !important;
+}
+
+li.b3-list-item.b3-list-item--hide-action.b3-list-item--focus {
+    background-color: var(--file-list-background) !important;
+}
+
+.b3-list--background .b3-list-item--focus .b3-list-item__text, .b3-list--background .b3-list-item--focus .b3-list-item__graphic{
+    color: var(--file-active-text-color) !important;
+}
+
+li.b3-list-item.b3-list-item--hide-action {
+    border: none;
+    border-radius: 0%;
+    width: auto;
+    transition: none;
+    margin-bottom: 0px !important;
+}
+
+li.b3-list-item.b3-list-item--hide-action:hover {
+    background-color: var(--file-list-background-files) !important;
+}
+
+li.item {
+    border: 2px solid var(--file-list-background) !important;
+    border-bottom: none !important;
+    border-radius: 5px 7px 0px 0px !important;
+    margin-bottom: 0px !important;
+}
+
+/*激活标签页*/
+li.item.item--focus {
+    background-color: var(--file-list-background) !important;
+}
+
+li.item.item--focus:hover {
+    background-color: var(--file-list-background);
+}
+
+.toolbar__item:hover {
+    color: var(--b3-theme-primary);
+}
+
+li.item:hover, .b3-list-item:hover {
+    background-color: var(--file-list-background)!important;
+    box-shadow: none !important;
+}
+
+.ft__primary:hover {
+    transform: scale(1.5);    
+    transition: all 200ms ease-in-out;
+}
+
+/*页面标签栏*/
+.layout-tab-bar .item--focus {
+    background-color: var(--file-list-background-files) !important;
+    border-color: var(--b3-theme-primary);
+    color: var(--file-active-text-color) !important;
+}
+
+.layout-tab-bar .item--focus:hover {
+    background-color: var(--file-list-background-files);
+}
+
+/*标签形状*/
+.layout-tab-bar .item {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 20px;
+    color: var(--layout-tabbar);
+}
+
+/*工作区*/
+.vditor-ir__link {
+    color: var(--link-color);
+}
+
+.vditor-reset {
+    color: #cacaca !important;
+}
+
+blockquote {
+    border-left: 5px solid !important;
+    border-color: var(--b3-theme-primary) !important;
+    background-color: var(--blockquote-color);
+    color: #b4b4b4 !important;
+    padding: 10px 10px 10px 15px !important;
+}
+
+/*设置页面*/
+li.b3-list-item.b3-list-item--big {
+  border: none !important;
+  border-radius: 0%;
+  width: auto;
+  transition: none;
+  margin-bottom: 0px !important;
+  padding-left: 25px;
+}
+
+/*
+.vditor-reset pre>code{
+    border: 2px solid;
+    border-color: var(--b3-theme-primary);
+}
+*/
+
+/*脚注等颜色*/
+.hljs-bullet, .hljs-quote, .hljs-link, .hljs-number, .hljs-regexp, .hljs-literal {
+    color: #a4bce0 !important;
+}
+
+.hljs-comment, .hljs-quote {
+    font-style: normal !important;
+}
+
+.hljs-symbol, .hljs-bullet{
+    color: var(--b3-graph-hl-line) !important;
+}
+
+.hljs-title, .hljs-section, .hljs-selector-id {
+    color: rgb(245, 131, 0) !important;
+    font-weight: bold;
+}
+   
+/*md语法*/
+.vditor-ir__node .vditor-ir__marker {
+    color: var(--workplace-markdown);
+}
+
+/*标题*/
+.vditor-reset h1{
+    color: var(--h1-color);
+}
+.vditor-reset h2{
+    color: var(--h2-color);
+}
+.vditor-reset h3{
+    color: var(--h3-color);
+}
+.vditor-reset h4{
+    color: var(--h4-color);
+}
+.vditor-reset h5{
+    color: var(--h5-color);
+}
+.vditor-reset h6{
+    color: var(--h6-color);
+}
+
+/*代码框*/
+code::before{
+    color: #ffffff !important;
+    opacity: 0.7;
+    font-size: 17px;
+    font-weight: 600;
+    display: block;
+    padding: 1px 0px;
+    padding-left: 90%;
+}
+
+code[class~='language-js']::before{
+    content: 'JS';
+}
+
+code[class~='language-c']::before{
+  content: "C";
+}
+ 
+code[class~='language-python']::before{
+  content: "PYTHON";
+}
+ 
+code[class~='language-nginx']::before{
+  content: "NGINX";
+}
+ 
+code[class~='language-css']::before{
+  content: "CSS";
+}
+ 
+code[class~='language-javascript']::before{
+  content: "JS";
+}
+ 
+code[class~='language-php']::before{
+  content: "PHP";
+}
+ 
+code[class~='language-shell']::before{
+  content: "SHELL";
+}
+ 
+code[class~='language-flow']::before{
+  content: "FLOW";
+}
+ 
+code[class~='language-sequence']::before{
+  content: "SEQUENCE";
+}
+ 
+code[class~='language-sql']::before{
+  content: "SQL";
+}
+ 
+code[class~='language-yaml']::before{
+  content: "YAML";
+}
+ 
+code[class~='language-ini']::before{
+  content: "INI";
+}
+ 
+code[class~='language-xml']::before{
+  content: "XML";
+}
+ 
+code[class~='language-git']::before{
+  content: "GIT";
+}
+ 
+code[class~='language-cs']::before{
+  content: "C#";
+}
+ 
+code[class~='language-cpp']::before{
+  content: "C++";
+}
+ 
+code[class~='language-java']::before{
+  content: "JAVA";
+}
+ 
+code[class~='language-html']::before{
+  content: "HTML";
+}
+ 
+code[class~='language-txt']::before{
+  content: "TXT";
+}
+
+code.language-math{
+    background-color: transparent !important;
+}
+
+.b3-list--background .b3-list-item--focus {
+    color: white;
+}
+
+
+/* colourful notes */
+/* from Notation by death_au  https://github.com/deathau/Notation-for-Obsidian */
+/* Original idea from: https://gist.github.com/mklepaczewski/54e451f09994b9d450de81c8baaf8aa4 */
+/* but also with simpler classes so you can use `<span class='colour'>` as well */
+code.language-note-notice,
+code.language-note-gray-background,
+code.language-note-gray-bg,
+.gray-background,
+.gray-bg {
+  background-color: var(--background-gray) !important;
+}
+
+code.language-note-brown-background,
+code.language-note-brown-bg,
+.brown-background,
+.brown-bg {
+  background-color: var(--background-brown) !important;
+}
+
+code.language-note-orange-background,
+code.language-note-orange-bg,
+.orange-background,
+.orange-bg {
+  background-color: var(--background-orange) !important;
+}
+
+code.language-note-yellow-background,
+code.language-note-yellow-bg,
+.yellow-background,
+.yellow-bg {
+  background-color: var(--background-yellow) !important;
+}
+
+code.language-note-green-background,
+code.language-note-green-bg,
+.green-background,
+.green-bg {
+  background-color: var(--background-green) !important;
+}
+
+code.language-note-blue-background,
+code.language-note-blue-bg,
+.blue-background,
+.blue-bg {
+  background-color: var(--background-blue) !important;
+}
+
+code.language-note-purple-background,
+code.language-note-purple-bg,
+.purple-background,
+.purple-bg {
+  background-color: var(--background-purple) !important;
+}
+
+code.language-note-pink-background,
+code.language-note-pink-bg,
+.pink-background,
+.pink-bg {
+  background-color: var(--background-pink) !important;
+}
+
+code.language-note-red-background,
+code.language-note-red-bg,
+.red-background,
+.red-bg {
+  background-color: var(--background-red) !important;
+}
+
+code.language-note-important,
+code.language-note-imp {
+  border: 4px dashed var(--note-important) !important;
+  background-color: transparent !important;
+}
+
+code.language-note-important:before, code.language-note-imp::before{
+  content: "Important";
+  color: var(--note-important) !important;
+  font-weight: 800;
+  padding: 5px 0px;
+  padding-left: 0%;
+}
+
+/*colourful text*/
+code.language-note-gray,
+code.language-note-brown,
+code.language-note-orange,
+code.language-note-yellow,
+code.language-note-green,
+code.language-note-blue,
+code.language-note-purple,
+code.language-note-pink,
+code.language-note-red {
+  background-color: #1d1d1d !important;
+  border: none !important;
+}
+
+code.language-note-gray,
+.gray {
+  color: var(--text-gray);
+}
+
+code.language-note-brown,
+.brown {
+  color: var(--text-brown);
+}
+
+code.language-note-orange,
+.orange {
+  color: var(--text-orange);
+}
+
+code.language-note-yellow,
+.yellow {
+  color: var(--text-yellow)
+}
+
+code.language-note-green,
+.green {
+  color: var(--text-green);
+}
+
+code.language-note-blue,
+.blue {
+  color: var(--text-blue);
+}
+
+code.language-note-purple,
+.purple {
+  color: var(--text-purple);
+}
+
+code.language-note-pink,
+.pink {
+  color: var(--text-pink);
+}
+
+code.language-note-red,
+.red {
+  color: var(--text-red);
+}
+
+/*列表*/
+
+/*简单竖线*/
+/*
+ul,
+ol,
+ul ul,
+ol ul,
+ul ol,
+ol ol {
+    list-style-position: inside;
+}
+
+ul ul,
+ol ul,
+ul ol,
+ol ol {
+    content:'';
+    border-left: 2px solid var(--background-modifier-border);
+    margin-left: 0.1em !important;
+}*/
+
+ul > li:not(.task-list-item) {
+    position: relative;
+    padding-left: 6px;
+    list-style-position: inside;
+    border-radius: 10px;
+    width: fit-content;
+    margin-bottom: 8px;
+    padding-right: 6px;
+    transition:all 300ms ease-in-out;
+  }
+  
+  ul > li:not(.task-list-item) {
+    border-left: 2px solid var(--list-ul-block-color);
+    /*box-shadow: 0 0 0 1px var(--list-ul-block-color);*/
+  }
+  
+  ul > li:not(.task-list-item):hover {
+    border-color: var(--list-ul-hover);
+    box-shadow: 0 0 0 2px var(--list-ul-hover);
+  }
+  
+
+  ol {
+    position: relative;
+    list-style: none;  
+    counter-reset: cupcake;
+  }
+  
+  ol > li {
+    position: relative;
+    padding-left: 6px;
+    list-style-position: inside;
+    border-radius: 10px;
+    width: fit-content;
+    margin-bottom: 8px;
+    padding-right: 6px;
+    counter-increment: cupcake;
+    word-wrap:break-word;
+    word-break:break-word;
+    transition:all 300ms ease-in-out;
+  } 
+  
+  ol > li {
+    border-left: 2px solid var(--list-ol-block-color);
+    /*box-shadow: 0 0 0 1px var(--list-ol-block-color);*/
+  } 
+  
+  ol > li:hover {
+    border-color: var(--list-ol-hover);
+    box-shadow: 0 0 0 2px var(--list-ol-hover);
+  }
+  
+  ol > li::before {
+    content: counters(cupcake, '.') '. ';
+    font-weight: bold;
+    color: var(--list-ol-number-color);
+    display: inline-block;
+    white-space: pre;
+  }
+  
