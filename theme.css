@@ -123,7 +123,7 @@
     --font-family-tag:;
 
     /* 线条 */
-    --b3-border-color: #141414;
+    --b3-border-color: #5555553b;
 
     /* 滚动条 */
     --b3-scroll-color: rgba(230, 230, 230, .3);
@@ -152,7 +152,7 @@
 
     /* 图表颜色 */
     --b3-graph-point: #e8eaed;
-    --b3-graph-line: #9aa0a6;
+    --b3-graph-line: #abbac9;
     --b3-graph-hl-point: #f3a92f;
     --b3-graph-hl-line: #d23f31;
 
@@ -491,9 +491,11 @@ li.b3-list-item.b3-list-item--big {
 /*标题*/
 .vditor-reset h1{
     color: var(--h1-color);
+    border-bottom: 2px solid;
 }
 .vditor-reset h2{
     color: var(--h2-color);
+    border-bottom: 1px solid;
 }
 .vditor-reset h3{
     color: var(--h3-color);
@@ -831,3 +833,69 @@ ul > li:not(.task-list-item) {
     white-space: pre;
   }
   
+/*table*/
+.vditor-reset table td, .vditor-reset table th {
+  border: 1px solid gray;
+}
+
+/* 分割线 */
+.vditor-reset hr {
+  background-color: #707070;
+}
+
+.to-recall {
+  position: relative;
+  float: left;
+  width: 30%;
+  background-color: var(--text-normal);
+  border-radius: 2%;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+  z-index: 1;
+  padding: 10px 8px;
+  margin-right: 8px;
+  font-weight: bold;
+  font-family: Cooper;
+  color: var(--text-normal);
+}
+
+.to-recall:hover {
+  cursor: pointer;
+} 
+
+.to-recall:active {
+  position: relative;
+  max-width: 30%;
+  background-color: transparent;
+  border-radius: 5%;
+  transition: all 300ms ease;
+  color: var(--text-normal);
+}
+
+.to-recall::after {
+  content: "Click";
+  position: absolute;
+  font-size: 12px;
+  top: 1px;
+  right: 5px;
+  font-weight: 600;
+  font-family: Arial;
+  color: var(--background-primary);
+}
+
+.to-recall::before {
+  content: " To Recall";
+  display: inline-block;
+  position: absolute;
+  top: -20px;
+  left: -8px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: OCR A;
+  color: #858585;
+  white-space: pre;
+}
